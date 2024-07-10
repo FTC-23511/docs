@@ -1,0 +1,13 @@
+[book]
+authors = ["robopandas"]
+language = "en"
+multilingual = false
+src = "src"
+title = "The Cookbook"
+
+[output.html.code.hidelines]
+java = "# "
+kt = "# "
+
+[output.html]
+mathjax-support = true
