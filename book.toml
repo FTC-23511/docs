@@ -11,9 +11,6 @@ kt = "# "
 
 [output.html]
 mathjax-support = true
-mathjax-support = true
 site-url = "/docs/"
 git-repository-url = "https://github.com/FTC-23511/docs/tree/master/src"
 edit-url-template = "https://github.com/FTC-23511/docs/edit/master/src/{path}"
-
-
