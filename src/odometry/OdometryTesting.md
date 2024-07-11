@@ -1,4 +1,4 @@
-# OdometryTesting
+# Odometry Testing
 
 ### Environment:
 - Latest [FIRST Tech Challenge Field Soft Tiles](https://www.andymark.com/products/soft-tiles-for-first-tech-challenge-field-options)

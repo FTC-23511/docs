@@ -5,7 +5,7 @@
 ---
 
 # Odometry
-- [Odometry Testing](./Odometry/OdometryTesting.md)
+- [Odometry Testing](odometry/OdometryTesting.md)
 
 ---
 [Contributors](./contributors.md)
