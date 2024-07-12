@@ -91,7 +91,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="introduction.html">Introduction</a></li><li class="chapter-item expanded affix "><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">Odometry</li><li class="chapter-item expanded "><a href="odometry/OdometryTesting.html"><strong aria-hidden="true">1.</strong> Odometry Testing</a></li><li class="chapter-item expanded affix "><li class="spacer"></li><li class="chapter-item expanded affix "><a href="contributors.html">Contributors</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="introduction.html">Introduction</a></li><li class="chapter-item expanded affix "><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">Odometry</li><li class="chapter-item expanded "><a href="odometry/OdometryTesting.html"><strong aria-hidden="true">1.</strong> Odometry Testing</a></li><li class="chapter-item expanded "><a href="odometry/StraightTest.html"><strong aria-hidden="true">2.</strong> Straight Test</a></li><li class="chapter-item expanded "><a href="odometry/SplineTest.html"><strong aria-hidden="true">3.</strong> Spline Test</a></li><li class="chapter-item expanded "><a href="odometry/CombinedTest.html"><strong aria-hidden="true">4.</strong> Combined Test</a></li><li class="chapter-item expanded affix "><li class="spacer"></li><li class="chapter-item expanded affix "><a href="contributors.html">Contributors</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
@@ -230,7 +230,8 @@
 <hr />
 <h3 id="software"><a class="header" href="#software">Software:</a></h3>
 <ul>
-<li>RoadRunner V1.0: Quickstart (3 Dead Wheels)</li>
+<li>RoadRunner V1.0: Quickstart (3 Dead Wheels)
+<ul>
 <li>Tuning steps: (each step should be ran 3 times, and the three values should be averaged to get the final constant)
 <ul>
 <li>
@@ -252,24 +253,68 @@
 <li>
 <p>Testing specifications:</p>
 <ul>
-<li><a href="https://github.com/FTC-23511/OdometryTesting/blob/main/straightTest.java">Straight Test</a>:
+<li>
+<p><a href="odometry/./StraightTest.html">Straight Test</a>:</p>
 <ul>
 <li>Moving in every 30° direction (0°, 30°, 60°, 90°, 120°, 150°, 180°, 210°, 240°, 270°, 300° &amp; 330°) back and forth a distance of 2 Tiles (48 inches) in a straight line, and reporting change in position for each odometry wheel at the end</li>
 <li>There is no turning</li>
 <li>This will all be executed with <code>.strafeTo(new Vector2d(x, y))</code>, not <code>.lineToX(x)</code> or <code>.lineTo(x)</code></li>
-<li>The video is available in <a href="https://drive.google.com/file/d/1uCDhG6eaOSBo4w24GY8qGIoxEDKCqx3s/view?resourcekey">Google Drive</a> as well as <a href="https://github.com/FTC-23511/OdometryTesting/blob/main/30%C2%B0%20Straight%20Test.mp4">GitHub</a></li>
 </ul>
+  <br>
+  <div class="video-container-1">
+      <iframe width="505" height="650"
+          src="https://www.youtube.com/embed/0vLSH07H9QM?rel=0&modestbranding=1" title="waitSeconds()" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+      </iframe>
+  </div>
+  <style>
+      .video-container-1 {
+          display: flex;
+          -webkit-justify-content: space-around;
+          width: 100%;
+          overflow: hidden;
+          margin: 0 auto;
+          flex-wrap: wrap;
+      }
+
+      @media (max-width: 600px) {
+           .video-container-1 {
+               width: 328px;
+               height: 423px;
+           }
+
+      .video-container-1 iframe {
+           width: 328px;
+           height: 423px;
+      }
+  }
+  </style>
+  <br>
 </li>
-<li><a href="https://github.com/FTC-23511/OdometryTesting/blob/main/splineTest.java">Spline Test:</a>
+<li>
+<p><a href="odometry/./SplineTest.html">Spline Test:</a></p>
 <ul>
 <li>A large variety of splines, turns, and turning while strafing in complex paths that eventually returns to the origin, and reporting change in position for each odometry wheel at the end</li>
-<li>The video is available in <a href="https://drive.google.com/file/d/1Tv0DMct2CGQQpmdGgMrqSZZ4Z3M_xc8O/view?usp=sharing">Google Drive</a> as well as <a href="https://github.com/FTC-23511/OdometryTesting/blob/main/Spline%20Test.mp4">GitHub</a></li>
 </ul>
+  <br>
+  <div class="video-container-1">
+      <iframe width="505" height="650"
+          src="https://www.youtube.com/embed/l5nCy-ByGY4?rel=0&modestbranding=1" title="waitSeconds()" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+      </iframe>
+  </div>
+  <br>
 </li>
-<li><a href="https://github.com/FTC-23511/OdometryTesting/blob/main/splineTest.java">Combined Test:</a>
+<li>
+<p><a href="odometry/./CombinedTest.html">Combined Test:</a></p>
 <ul>
-<li>A combination of <a href="https://github.com/FTC-23511/OdometryTesting/blob/main/splineTest.java">Spline Test</a> and <a href="https://github.com/FTC-23511/OdometryTesting/blob/main/straightTest.java">Straight Test</a> that eventually returns to the origin, and reporting change in position for each odometry wheel at the end</li>
-<li>The video is available in <a href="https://drive.google.com/file/d/1wR9s4brVVej4HuMqOylBI0rMEQcilKWj/view">Google Drive</a> as well as <a href="https://github.com/FTC-23511/OdometryTesting/blob/main/Combined%20Test.mp4">GitHub</a>.</li>
+<li>A combination of <a href="odometry/./SplineTest.html">Spline Test</a> and <a href="odometry/./StraightTest.html">Straight Test</a> that eventually returns to the origin, and reporting change in position for each odometry wheel at the end</li>
+</ul>
+  <br>
+  <div class="video-container-1">
+      <iframe width="505" height="650"
+          src="https://www.youtube.com/embed/D9ous77Ukqo?rel=0&modestbranding=1" title="waitSeconds()" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+      </iframe>
+  </div>
+  <br></li>
 </ul>
 </li>
 </ul>
@@ -277,14 +322,212 @@
 </ul>
 </li>
 </ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="straight-test"><a class="header" href="#straight-test">Straight Test</a></h1>
+<pre><code class="language-java"><span class="boring">// Straight Test
+</span>.strafeTo(new Vector2d(0, 48))
+.strafeTo(new Vector2d(0, 0))
+
+.strafeTo(new Vector2d(24, 24 * Math.sqrt(3)))
+.strafeTo(new Vector2d(0, 0))
+
+.strafeTo(new Vector2d(24 * Math.sqrt(3), 24))
+.strafeTo(new Vector2d(0, 0))
+
+.strafeTo(new Vector2d(48, 0))
+.strafeTo(new Vector2d(0, 0))
+
+.strafeTo(new Vector2d(24 * Math.sqrt(3), -24))
+.strafeTo(new Vector2d(0, 0))
+
+.strafeTo(new Vector2d(24, -24 * Math.sqrt(3)))
+.strafeTo(new Vector2d(0, 0))
+
+.strafeTo(new Vector2d(0, -48))
+.strafeTo(new Vector2d(0, 0))
+
+.strafeTo(new Vector2d(-24, -24 * Math.sqrt(3)))
+.strafeTo(new Vector2d(0, 0))
+
+.strafeTo(new Vector2d(-24 * Math.sqrt(3), -24))
+.strafeTo(new Vector2d(0, 0))
+
+.strafeTo(new Vector2d(-48, 0))
+.strafeTo(new Vector2d(0, 0))
+
+.strafeTo(new Vector2d(-24 * Math.sqrt(3), 24))
+.strafeTo(new Vector2d(0, 0))
+
+.strafeTo(new Vector2d(-24, 24 * Math.sqrt(3)))
+.strafeTo(new Vector2d(0, 0))
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="spline-test"><a class="header" href="#spline-test">Spline Test</a></h1>
+<pre><code class="language-java"><span class="boring">// Spline Test
+</span>.strafeToSplineHeading(new Vector2d(-48, -48), Math.toRadians(0))
+
+.setTangent(0)
+.splineToSplineHeading(new Pose2d(48, 48, Math.toRadians(90)), Math.PI / 2)
+
+.setTangent(0)
+.setReversed(true)
+.splineTo(new Vector2d(24, 24), Math.PI / 2)
+
+.setTangent(0)
+.setReversed(false)
+.splineToConstantHeading(new Vector2d(0, 36), Math.PI / 2)
+
+.turnTo(Math.toRadians(180))
+
+.splineTo(new Vector2d(-48, 48), Math.PI / 2)
+
+.splineTo(new Vector2d(0, 0), Math.PI / 2)
+
+.strafeToSplineHeading(new Vector2d(-48, -48), Math.toRadians(0))
+
+.setTangent(0)
+.splineToSplineHeading(new Pose2d(48, 48, Math.toRadians(90)), Math.PI / 2)
+
+.setTangent(0)
+.setReversed(true)
+.splineTo(new Vector2d(24, 24), Math.PI / 2)
+
+.setTangent(0)
+.setReversed(false)
+.splineToConstantHeading(new Vector2d(0, 36), Math.PI / 2)
+
+.turnTo(Math.toRadians(180))
+
+.splineTo(new Vector2d(-48, 48), Math.PI / 2)
+
+.splineTo(new Vector2d(0, 0), Math.PI / 2)
+
+.strafeToSplineHeading(new Vector2d(-48, -48), Math.toRadians(0))
+
+.setTangent(0)
+.splineToSplineHeading(new Pose2d(48, 48, Math.toRadians(90)), Math.PI / 2)
+
+.setTangent(0)
+.setReversed(true)
+.splineTo(new Vector2d(24, 24), Math.PI / 2)
+
+.setTangent(0)
+.setReversed(false)
+.splineToConstantHeading(new Vector2d(0, 36), Math.PI / 2)
+
+.turnTo(Math.toRadians(180))
+
+.splineTo(new Vector2d(-48, 48), Math.PI / 2)
+
+.splineTo(new Vector2d(0, 0), Math.PI / 2)
+
+.strafeToSplineHeading(new Vector2d(-48, -48), Math.toRadians(0))
+
+.setTangent(0)
+.splineToSplineHeading(new Pose2d(48, 48, Math.toRadians(90)), Math.PI / 2)
+
+.setTangent(0)
+.setReversed(true)
+.splineTo(new Vector2d(24, 24), Math.PI / 2)
+
+.setTangent(0)
+.setReversed(false)
+.splineToConstantHeading(new Vector2d(0, 36), Math.PI / 2)
+
+.turnTo(Math.toRadians(180))
+
+.splineTo(new Vector2d(-48, 48), Math.PI / 2)
+
+.splineTo(new Vector2d(0, 0), Math.PI / 2)
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="combined-test"><a class="header" href="#combined-test">Combined Test</a></h1>
+<pre><code class="language-java"><span class="boring">// Combined Test
+</span>.strafeToSplineHeading(new Vector2d(-48, -48), Math.toRadians(0))
+
+.strafeTo(new Vector2d(-24, 24 * Math.sqrt(3)))
+.setTangent(0)
+
+.splineToSplineHeading(new Pose2d(48, 48, Math.toRadians(90)), Math.PI / 2)
+
+.strafeToSplineHeading(new Vector2d(-48, 48), Math.toRadians(270))
+
+.turnTo(Math.toRadians(315))
+
+.splineTo(new Vector2d(-48, 12), Math.PI / 6)
+
+.splineToSplineHeading(new Pose2d(48, -6, Math.toRadians(215)), Math.PI / 3)
+
+.setReversed(true)
+
+.splineToSplineHeading(new Pose2d(6, -48, Math.toRadians(215)), Math.PI / 4)
+.splineTo(new Vector2d(36, -18), Math.PI / 2)
+
+.strafeToLinearHeading(new Vector2d(24, 24), Math.toRadians(0))
+
+.turnTo(Math.toRadians(45))
+.lineToX(0)
+.turn(Math.toRadians(-45))
+
+.strafeToSplineHeading(new Vector2d(-48, -48), Math.toRadians(0))
+
+.strafeTo(new Vector2d(-24, 24 * Math.sqrt(3)))
+.setTangent(0)
+
+.splineToSplineHeading(new Pose2d(48, 48, Math.toRadians(90)), Math.PI / 2)
+
+.strafeToSplineHeading(new Vector2d(-48, 48), Math.toRadians(270))
+
+.turnTo(Math.toRadians(315))
+
+.splineTo(new Vector2d(-48, 12), Math.PI / 6)
+
+.splineToSplineHeading(new Pose2d(48, -6, Math.toRadians(215)), Math.PI / 3)
+
+.setReversed(true)
+
+.splineToSplineHeading(new Pose2d(6, -48, Math.toRadians(215)), Math.PI / 4)
+.splineTo(new Vector2d(36, -18), Math.PI / 2)
+
+.strafeToLinearHeading(new Vector2d(24, 24), Math.toRadians(0))
+
+.turnTo(Math.toRadians(45))
+.lineToX(0)
+.turn(Math.toRadians(-45))
+
+.strafeToSplineHeading(new Vector2d(-48, -48), Math.toRadians(0))
+
+.strafeTo(new Vector2d(-24, 24 * Math.sqrt(3)))
+.setTangent(0)
+
+.splineToSplineHeading(new Pose2d(48, 48, Math.toRadians(90)), Math.PI / 2)
+
+.strafeToSplineHeading(new Vector2d(-48, 48), Math.toRadians(270))
+
+.turnTo(Math.toRadians(315))
+
+.splineTo(new Vector2d(-48, 12), Math.PI / 6)
+
+.splineToSplineHeading(new Pose2d(48, -6, Math.toRadians(215)), Math.PI / 3)
+
+.setReversed(true)
+
+.splineToSplineHeading(new Pose2d(6, -48, Math.toRadians(215)), Math.PI / 4)
+.splineTo(new Vector2d(36, -18), Math.PI / 2)
+
+.strafeToLinearHeading(new Vector2d(24, 24), Math.toRadians(0))
+
+.turnTo(Math.toRadians(45))
+.lineToX(0)
+.turn(Math.toRadians(-45))
+</code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="contributors"><a class="header" href="#contributors">Contributors</a></h1>
 <ul>
 <li>Arush <a href="https://github.com/ArushYadlapati">(github)</a> <a href="https://discord.com/users/764258716463529986">(discord)</a></li>
+<li>Seattle Solvers <a href="https://github.com/SeattleSolvers23511">(github)</a> <a href="https://discord.gg/dJbSWcXsUp">(discord)</a></li>
 </ul>
 <br>
 <a href="https://github.com/FTC-23511/docs.seattlesolvers.com/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=FTC-23511/docs.seattlesolvers.com" />
 </a>
+<p>Image above was made with <a href="https://contrib.rocks">contrib.rocks</a>.</p>
 
                     </main>
 
