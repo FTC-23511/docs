@@ -65,11 +65,11 @@
                 </iframe>
             </div>
         <br>
-    
+
     3. [ Combined Test:](./CombinedTest.md)
         - A combination of [Spline Test](./SplineTest.md) and [Straight Test](./StraightTest.md)
         - At the end, the change in position for each odometry wheel is returned
-        
+
         <br>
             <div class="video-container-1">
                 <iframe width="505" height="650"
@@ -77,7 +77,7 @@
                 </iframe>
             </div>
         <br>
-    
+
 <style>
     .video-container-1 {
         display: flex;
@@ -96,7 +96,7 @@
             height: 423px;
             display: block;
             justify-content: center;
-            margin-left: -55px;
+            margin-left: -62px;
             
         }
     }
