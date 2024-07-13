@@ -70,41 +70,33 @@
         - A combination of [Spline Test](./SplineTest.md) and [Straight Test](./StraightTest.md)
         - At the end, the change in position for each odometry wheel is returned
         
-        <br>
-        <div class="video-container-1">
-            <iframe width="505" height="650"
-                src="https://www.youtube.com/embed/D9ous77Ukqo?rel=0&modestbranding=1" title="waitSeconds()" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
-            </iframe>
-        </div>
-        <br>
+<br>
+<div class="video-container-1">
+<iframe width="505" height="650"
+    src="https://www.youtube.com/embed/D9ous77Ukqo?rel=0&modestbranding=1" title="waitSeconds()" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+</iframe>
+</div>
+<br>
     
-        <style>
-            .video-container-1 {
-                display: flex;
-                flex-wrap: wrap;
-                margin-left: 28px;
-                
-            }
+<style>
+    .video-container-1 {
+        display: flex;
+        flex-wrap: wrap;
+        margin-left: 109px;
+    }
 
-            @media (max-width: 600px) {
-                .video-container-1 {
-                    width: 328px;
-                    height: 423px;
-       
-                    margin-left: -7px;
-                    display: flex;
-                    flex-wrap: wrap;
-                    
-                }
+    @media (max-width: 600px) {
+        .video-container-1 {
+            display: block;
+            margin: 0 auto;
+        }
 
-                .video-container-1 iframe {
-                    width: 328px;
-                    height: 423px;
-                    
-                    margin-left: -7px;
-                    display: flex;
-                    flex-wrap: wrap;
-
-                }
-            }
-        </style>
+        .video-container-1 iframe {
+            width: 328px;
+            height: 423px;
+            display: block;
+            margin: 0 auto;
+            
+        }
+    }
+</style>
