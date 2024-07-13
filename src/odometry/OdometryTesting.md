@@ -47,42 +47,42 @@
         - This will all be executed with `.strafeTo(new Vector2d(x, y))`, not `.lineToX(x)` or `.lineTo(x)`
 
         <br>
-        <div class="video-container-1">
-            <iframe width="505" height="650"
-                src="https://www.youtube.com/embed/0vLSH07H9QM?rel=0&modestbranding=1" title="waitSeconds()" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
-            </iframe>
-       </div>
-       <br>
+            <div class="video-container-1">
+                <iframe width="505" height="650"
+                    src="https://www.youtube.com/embed/0vLSH07H9QM?rel=0&modestbranding=1" title="waitSeconds()" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                </iframe>
+            </div>
+        <br>
 
     2. [Spline Test:](./SplineTest.md)
         - A large variety of splines, turns, and turning while strafing in complex paths
         - At the end, the change in position for each odometry wheel is returned
 
         <br>
-        <div class="video-container-1">
-            <iframe width="505" height="650"
-                src="https://www.youtube.com/embed/l5nCy-ByGY4?rel=0&modestbranding=1" title="waitSeconds()" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
-            </iframe>
-       </div>
-       <br>
+            <div class="video-container-1">
+                <iframe width="505" height="650"
+                    src="https://www.youtube.com/embed/l5nCy-ByGY4?rel=0&modestbranding=1" title="waitSeconds()" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                </iframe>
+            </div>
+        <br>
     
     3. [ Combined Test:](./CombinedTest.md)
         - A combination of [Spline Test](./SplineTest.md) and [Straight Test](./StraightTest.md)
         - At the end, the change in position for each odometry wheel is returned
         
-<br>
-<div class="video-container-1">
-<iframe width="505" height="650"
-    src="https://www.youtube.com/embed/D9ous77Ukqo?rel=0&modestbranding=1" title="waitSeconds()" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
-</iframe>
-</div>
-<br>
+        <br>
+            <div class="video-container-1">
+                <iframe width="505" height="650"
+                    src="https://www.youtube.com/embed/D9ous77Ukqo?rel=0&modestbranding=1" title="waitSeconds()" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                </iframe>
+            </div>
+        <br>
     
 <style>
     .video-container-1 {
         display: flex;
         flex-wrap: wrap;
-        margin-left: 109px;
+        margin-left: 28px;
     }
 
     @media (max-width: 600px) {
@@ -95,7 +95,8 @@
             width: 328px;
             height: 423px;
             display: block;
-            margin: 0 auto;
+            justify-content: center;
+            margin-left: -27px;
             
         }
     }
