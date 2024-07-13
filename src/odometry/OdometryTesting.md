@@ -80,7 +80,7 @@
         <style>
             .video-container-1 {
                 display: flex;
-                justify-content: space-evenly;
+                justify-content: flex-start;
                 width: 100%;
                 overflow: hidden;
                 margin: 0 auto;
