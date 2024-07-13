@@ -96,7 +96,7 @@
             height: 423px;
             display: block;
             justify-content: center;
-            margin-left: -27px;
+            margin-left: -55px;
             
         }
     }
