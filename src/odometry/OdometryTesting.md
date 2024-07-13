@@ -22,7 +22,7 @@
     - External BNO055 IMU
 - All tests done when battery is between 12-13v (measured via REV Driver Hub)
     - All batteries are less than a year old
->**Only hardware changes between tests are changing the odometry module!**
+> **Only hardware changes between tests are changing the odometry module!**
 - CAD models for all odometry set-ups can be found [here](https://cad.onshape.com/documents/00fb2b8fdbd2d0c2cdcbc217/w/79d9fab6dc2812b605647b2f/e/d73efa616f99a98bcc69a6b4)
 
 ---
@@ -37,6 +37,7 @@
     - `LateralRampLogger`: ~5.5 seconds of runtime
     - `AngularRampLogger`: ~7 seconds of runtime
     - `ManualFeedforwardTuner` & `ManualFeedbackTuner`: 4.5 Tiles (108 inches)
+
 - Testing Specifications:
 
     1. [Straight Test](./StraightTest.md):
@@ -65,10 +66,10 @@
        </div>
        <br>
     
-    3. [Combined Test:](./CombinedTest.md)
+    3. [ Combined Test:](./CombinedTest.md)
         - A combination of [Spline Test](./SplineTest.md) and [Straight Test](./StraightTest.md)
         - At the end, the change in position for each odometry wheel is returned
-
+        
         <br>
         <div class="video-container-1">
             <iframe width="505" height="650"
@@ -80,24 +81,30 @@
         <style>
             .video-container-1 {
                 display: flex;
-                justify-content: flex-start;
-                width: 100%;
-                overflow: hidden;
-                margin: 0 auto;
                 flex-wrap: wrap;
+                margin-left: 28px;
+                
             }
 
             @media (max-width: 600px) {
                 .video-container-1 {
                     width: 328px;
                     height: 423px;
-                    justify-content: center;
+       
+                    margin-left: -7px;
+                    display: flex;
+                    flex-wrap: wrap;
+                    
                 }
 
                 .video-container-1 iframe {
                     width: 328px;
                     height: 423px;
-                    justify-content: center;
+                    
+                    margin-left: -7px;
+                    display: flex;
+                    flex-wrap: wrap;
+
                 }
             }
-       </style>
+        </style>
