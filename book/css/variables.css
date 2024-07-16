@@ -14,6 +14,50 @@
 
 /* Themes */
 
+.solvers-light {
+    --bg: #F8DF95;
+    --fg: #000000;
+
+    --sidebar-bg: #EFC261;
+    --sidebar-fg: hsl(0, 0%, 0%);
+    --sidebar-non-existant: #aaaaaa;
+    --sidebar-active: #705E13;
+    --sidebar-spacer: #9B751F;
+
+    --scrollbar: #705E13;
+
+    --icons: #B88D24;
+    --icons-hover: #755817;
+
+    --links: #7A622C;
+
+    --inline-code-color: #443200;
+
+    --theme-popup-bg: #F8DF95;;
+    --theme-popup-border: #705E13;
+    --theme-hover: #F1CC56;
+
+    --quote-bg: #F1CC56;
+    --quote-border: #B78D25;
+
+    --warning-border: #ff8e00;
+
+    --table-border-color: #B78D25;
+    --table-header-bg: #443200;
+    --table-alternate-bg: #B78D25;
+
+    --searchbar-border-color: #B78D25;
+    --searchbar-bg: #FFE497;
+    --searchbar-fg: #443200;
+    --searchbar-shadow-color: #443200;
+    --searchresults-header-fg: #443200;
+    --searchresults-border-color: #443200;
+    --searchresults-li-bg: #443200;
+    --search-mark-bg: #B78D25;
+
+    --color-scheme: light;
+}
+
 .ayu {
     --bg: hsl(210, 25%, 8%);
     --fg: #c5c5c5;
@@ -277,3 +321,6 @@
         --search-mark-bg: #355c7d;
     }
 }
+
+
+
