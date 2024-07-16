@@ -34,12 +34,12 @@ function playground_text(playground, hidden = true) {
             method: 'POST',
             mode: 'cors',
         })
-        .then(response => response.json())
-        .then(response => {
-            // get list of crates available in the rust playground
-            let playground_crates = response.crates.map(item => item["id"]);
-            playgrounds.forEach(block => handle_crate_list_update(block, playground_crates));
-        });
+            .then(response => response.json())
+            .then(response => {
+                // get list of crates available in the rust playground
+                let playground_crates = response.crates.map(item => item["id"]);
+                playgrounds.forEach(block => handle_crate_list_update(block, playground_crates));
+            });
     }
 
     function handle_crate_list_update(playground_block, playground_crates) {
@@ -137,17 +137,17 @@ function playground_text(playground, hidden = true) {
             mode: 'cors',
             body: JSON.stringify(params)
         })
-        .then(response => response.json())
-        .then(response => {
-            if (response.result.trim() === '') {
-                result_block.innerText = "No output";
-                result_block.classList.add("result-no-output");
-            } else {
-                result_block.innerText = response.result;
-                result_block.classList.remove("result-no-output");
-            }
-        })
-        .catch(error => result_block.innerText = "Playground Communication: " + error.message);
+            .then(response => response.json())
+            .then(response => {
+                if (response.result.trim() === '') {
+                    result_block.innerText = "No output";
+                    result_block.classList.add("result-no-output");
+                } else {
+                    result_block.innerText = response.result;
+                    result_block.classList.remove("result-no-output");
+                }
+            })
+            .catch(error => result_block.innerText = "Playground Communication: " + error.message);
     }
 
     // Syntax highlighting Configuration
@@ -291,6 +291,7 @@ function playground_text(playground, hidden = true) {
     var themeColorMetaTag = document.querySelector('meta[name="theme-color"]');
     var stylesheets = {
         ayuHighlight: document.querySelector("[href$='ayu-highlight.css']"),
+        solversLightHighlight: document.querySelector("[href$='solvers-light-highlight.css']"),
         tomorrowNight: document.querySelector("[href$='tomorrow-night.css']"),
         highlight: document.querySelector("[href$='highlight.css']"),
     };
@@ -331,18 +332,31 @@ function playground_text(playground, hidden = true) {
             stylesheets.ayuHighlight.disabled = true;
             stylesheets.tomorrowNight.disabled = false;
             stylesheets.highlight.disabled = true;
+            stylesheets.solversLightHighlight.disabled = true;
 
             ace_theme = "ace/theme/tomorrow_night";
         } else if (theme == 'ayu') {
             stylesheets.ayuHighlight.disabled = false;
             stylesheets.tomorrowNight.disabled = true;
             stylesheets.highlight.disabled = true;
+            stylesheets.solversLightHighlight.disabled = true;
             ace_theme = "ace/theme/tomorrow_night";
-        } else {
+
+        }
+        else if (theme == 'rust' || theme == 'light') {
             stylesheets.ayuHighlight.disabled = true;
             stylesheets.tomorrowNight.disabled = true;
             stylesheets.highlight.disabled = false;
+            stylesheets.solversLightHighlight.disabled = true;
             ace_theme = "ace/theme/dawn";
+        }
+        else {
+            stylesheets.ayuHighlight.disabled = true;
+            stylesheets.tomorrowNight.disabled = true;
+            stylesheets.highlight.disabled = false;
+            stylesheets.solversLightHighlight.disabled = false;
+            //ace_theme = "ace/theme/tomorrow_night";
+            ace_theme = "ace/theme/solvers-light";
         }
 
         setTimeout(function () {
