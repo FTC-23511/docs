@@ -58,6 +58,50 @@
     --color-scheme: light;
 }
 
+.solvers-dark {
+    --bg: #002B36;
+    --fg: #2AA198;
+
+    --sidebar-bg: #00212B;
+    --sidebar-fg: #006B84;
+    --sidebar-non-existant: #aaaaaa;
+    --sidebar-active: #2AA198;
+    --sidebar-spacer: #004052;
+
+    --scrollbar: #006B84;
+
+    --icons: #006B84;
+    --icons-hover: #2AA198;
+
+    --links: #7A622C;
+
+    --inline-code-color: #443200;
+
+    --theme-popup-bg: #F8DF95;;
+    --theme-popup-border: #705E13;
+    --theme-hover: #F1CC56;
+
+    --quote-bg: #F1CC56;
+    --quote-border: #B78D25;
+
+    --warning-border: #ff8e00;
+
+    --table-border-color: #B78D25;
+    --table-header-bg: #443200;
+    --table-alternate-bg: #B78D25;
+
+    --searchbar-border-color: #B78D25;
+    --searchbar-bg: #FFE497;
+    --searchbar-fg: #443200;
+    --searchbar-shadow-color: #443200;
+    --searchresults-header-fg: #443200;
+    --searchresults-border-color: #443200;
+    --searchresults-li-bg: #443200;
+    --search-mark-bg: #B78D25;
+
+    --color-scheme: dark;
+}
+
 .ayu {
     --bg: hsl(210, 25%, 8%);
     --fg: #c5c5c5;
@@ -321,6 +365,3 @@
         --search-mark-bg: #355c7d;
     }
 }
-
-
-
