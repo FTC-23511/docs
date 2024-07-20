@@ -292,6 +292,7 @@ function playground_text(playground, hidden = true) {
     var stylesheets = {
         ayuHighlight: document.querySelector("[href$='ayu-highlight.css']"),
         solversLightHighlight: document.querySelector("[href$='solvers-light-highlight.css']"),
+        solversDarkHighlight: document.querySelector("[href$='solvers-dark-highlight.css']"),
         tomorrowNight: document.querySelector("[href$='tomorrow-night.css']"),
         highlight: document.querySelector("[href$='highlight.css']"),
     };
@@ -333,6 +334,7 @@ function playground_text(playground, hidden = true) {
             stylesheets.tomorrowNight.disabled = false;
             stylesheets.highlight.disabled = true;
             stylesheets.solversLightHighlight.disabled = true;
+            stylesheets.solversDarkHighlight.disabled = true;
 
             ace_theme = "ace/theme/tomorrow_night";
         } else if (theme == 'ayu') {
@@ -340,6 +342,7 @@ function playground_text(playground, hidden = true) {
             stylesheets.tomorrowNight.disabled = true;
             stylesheets.highlight.disabled = true;
             stylesheets.solversLightHighlight.disabled = true;
+            stylesheets.solversDarkHighlight.disabled = true;
             ace_theme = "ace/theme/tomorrow_night";
 
         }
@@ -348,15 +351,27 @@ function playground_text(playground, hidden = true) {
             stylesheets.tomorrowNight.disabled = true;
             stylesheets.highlight.disabled = false;
             stylesheets.solversLightHighlight.disabled = true;
+            stylesheets.solversDarkHighlight.disabled = true;
             ace_theme = "ace/theme/dawn";
         }
-        else {
+        else if (theme == 'solvers-light') {
             stylesheets.ayuHighlight.disabled = true;
             stylesheets.tomorrowNight.disabled = true;
             stylesheets.highlight.disabled = false;
             stylesheets.solversLightHighlight.disabled = false;
+            stylesheets.solversDarkHighlight.disabled = true;
             //ace_theme = "ace/theme/tomorrow_night";
             ace_theme = "ace/theme/solvers-light";
+        }
+
+        else {
+            stylesheets.ayuHighlight.disabled = true;
+            stylesheets.tomorrowNight.disabled = false;
+            stylesheets.highlight.disabled = true;
+            stylesheets.solversLightHighlight.disabled = true;
+            stylesheets.solversDarkHighlight.disabled = false;
+            //ace_theme = "ace/theme/tomorrow_night";
+            ace_theme = "ace/theme/solvers-dark";
         }
 
         setTimeout(function () {
