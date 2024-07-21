@@ -59,7 +59,7 @@
         - Moving in every 30° direction from 0° to 330° back and forth a distance of 2 Tiles (48 inches) in a straight line
         - At the end, the change in position for each odometry wheel is returned
         - There is no turning
-        - This will all be executed with `.strafeTo(new Vector2d(x, y))`, not `.lineToX(x)` or `.lineTo(x)`
+        - This will all be executed with `.strafeTo(new Vector2d(x, y))`, not `.lineToX(x)` or `.lineToY(y)`
 
         <br>
             <div class="video-container-1">
