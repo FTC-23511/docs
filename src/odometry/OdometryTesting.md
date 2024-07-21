@@ -1,5 +1,16 @@
 # Odometry Testing
 
+### Procedure:
+- For each Odometry Wheel tested, they will go through the following configurations:
+  1. 2-Dead Wheels + [Internal BHI260AP IMU](https://www.revrobotics.com/rev-31-1595/)
+  2. 2-Dead Wheels + [External BNO055 IMU](https://www.adafruit.com/product/2472)
+  3. 3-Dead Wheels
+
+- Each configuration will go through a total of three tests (see [programming section](./OdometryTesting.md#software) below for more details)
+
+- Use [RoadRunner V1.0 Quickstart](https://rr.brott.dev/docs/) to tune each configuration
+   - Each step in the tuning procedure will be tuned 3 times, and values will be averaged to get a final constant (e.g, `kV`, `kA`, etc.)
+
 ### Environment:
 - Latest [FIRST Tech Challenge Field Soft Tiles](https://www.andymark.com/products/soft-tiles-for-first-tech-challenge-field-options)
     - Lightly used (1 season)
@@ -16,26 +27,30 @@
     - Same [goBILDA® MOD 1.25 30 tooth gears](https://www.gobilda.com/2315-series-steel-miter-gear-mod-1-25-set-screw-8mm-rex-bore-30-tooth/) as what come in the kit
     - Added weights at the center of the robot until robot weighs 25 lbs
     - All screws have red loctite applied to them to keep robot rigid between tests
-- “New” Control Hub
+
+- IMUs for 2 Wheel Odometry:
     - Both IMUs available and tested individually for 2 wheel testing
-    - Internal BHI260AP IMU
-    - External BNO055 IMU
+    - Internal BHI260AP IMU ([Newer Control Hubs](https://www.revrobotics.com/rev-31-1595/))
+    - [External BNO055 IMU](https://www.adafruit.com/product/2472)
+
 - All tests done when battery is between 12-13v (measured via REV Driver Hub)
     - All batteries are less than a year old
-> **Only hardware changes between tests are changing the odometry module!**
+> **Only hardware changes between tests are changing the odometry module or IMU!**
 - CAD models for all odometry set-ups can be found [here](https://cad.onshape.com/documents/00fb2b8fdbd2d0c2cdcbc217/w/79d9fab6dc2812b605647b2f/e/d73efa616f99a98bcc69a6b4)
 
 ---
 
 ### Software:
-- Robot Library: RoadRunner V1.0 (Quickstart, 3 Dead Wheels)
+- Robot Library: [RoadRunner V1.0 Quickstart](https://rr.brott.dev/docs/) (for both 3 Dead Wheels & 2 Dead Wheels)
     - Tuning steps: (each step should be ran 3 times, and the three values should be averaged to get the final constant)
-    - `ForwardPushTest` & `LateralPushTest`:
-      \\( \frac{\frac{96}{24.5}}{384.5} = 0.010190812 \\)
+    - `ForwardPushTest` & `LateralPushTest`: Theoretical `inPerTick` \\( =\frac{\frac{96}{24.5}}{384.5} = 0.010190812 \\)
 
     - `ForwardRampLogger`: 5 Tiles (120 inches)
+  
     - `LateralRampLogger`: ~5.5 seconds of runtime
+  
     - `AngularRampLogger`: ~7 seconds of runtime
+  
     - `ManualFeedforwardTuner` & `ManualFeedbackTuner`: 4.5 Tiles (108 inches)
 
 - Testing Specifications:

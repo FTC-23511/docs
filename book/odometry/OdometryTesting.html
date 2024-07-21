@@ -27,8 +27,6 @@
         <link rel="stylesheet" href="../highlight.css">
         <link rel="stylesheet" href="../tomorrow-night.css">
         <link rel="stylesheet" href="../ayu-highlight.css">
-        <link rel="stylesheet" href="../solvers-light-highlight.css">
-        <link rel="stylesheet" href="solvers-dark-highlight.css">
 
         <!-- Custom theme stylesheets -->
 
@@ -134,7 +132,6 @@
                             <i class="fa fa-paint-brush"></i>
                         </button>
                         <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
-                            <li role="none"><button role="menuitem" class="theme" id="solvers-light">Solvers Light</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
@@ -185,6 +182,26 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="odometry-testing"><a class="header" href="#odometry-testing">Odometry Testing</a></h1>
+<h3 id="procedure"><a class="header" href="#procedure">Procedure:</a></h3>
+<ul>
+<li>
+<p>For each Odometry Wheel tested, they will go through the following configurations:</p>
+<ol>
+<li>2-Dead Wheels + <a href="https://www.revrobotics.com/rev-31-1595/">Internal BHI260AP IMU</a></li>
+<li>2-Dead Wheels + <a href="https://www.adafruit.com/product/2472">External BNO055 IMU</a></li>
+<li>3-Dead Wheels</li>
+</ol>
+</li>
+<li>
+<p>Each configuration will go through a total of three tests (see <a href="./OdometryTesting.html#software">programming section</a> below for more details)</p>
+</li>
+<li>
+<p>Use <a href="https://rr.brott.dev/docs/">RoadRunner V1.0 Quickstart</a> to tune each configuration</p>
+<ul>
+<li>Each step in the tuning procedure will be tuned 3 times, and values will be averaged to get a final constant (e.g, <code>kV</code>, <code>kA</code>, etc.)</li>
+</ul>
+</li>
+</ul>
 <h3 id="environment"><a class="header" href="#environment">Environment:</a></h3>
 <ul>
 <li>Latest <a href="https://www.andymark.com/products/soft-tiles-for-first-tech-challenge-field-options">FIRST Tech Challenge Field Soft Tiles</a>
@@ -202,7 +219,8 @@
 <hr />
 <h3 id="hardware"><a class="header" href="#hardware">Hardware:</a></h3>
 <ul>
-<li><a href="https://www.gobilda.com/strafer-chassis-kit-v5/">Strafer® Chassis Kit V5 - goBILDA®</a> - all parts lightly used for 1 season or less with no effects to performance
+<li>
+<p><a href="https://www.gobilda.com/strafer-chassis-kit-v5/">Strafer® Chassis Kit V5 - goBILDA®</a> - all parts lightly used for 1 season or less with no effects to performance</p>
 <ul>
 <li>Only modification of <a href="https://www.gobilda.com/5203-series-yellow-jacket-planetary-gear-motor-13-7-1-ratio-24mm-length-8mm-rex-shaft-435-rpm-3-3-5v-encoder/">435 RPM goBILDA® motors</a></li>
 <li>Same <a href="https://www.gobilda.com/2315-series-steel-miter-gear-mod-1-25-set-screw-8mm-rex-bore-30-tooth/">goBILDA® MOD 1.25 30 tooth gears</a> as what come in the kit</li>
@@ -210,21 +228,23 @@
 <li>All screws have red loctite applied to them to keep robot rigid between tests</li>
 </ul>
 </li>
-<li>“New” Control Hub
+<li>
+<p>IMUs for 2 Wheel Odometry:</p>
 <ul>
 <li>Both IMUs available and tested individually for 2 wheel testing</li>
-<li>Internal BHI260AP IMU</li>
-<li>External BNO055 IMU</li>
+<li>Internal BHI260AP IMU (<a href="https://www.revrobotics.com/rev-31-1595/">Newer Control Hubs</a>)</li>
+<li><a href="https://www.adafruit.com/product/2472">External BNO055 IMU</a></li>
 </ul>
 </li>
-<li>All tests done when battery is between 12-13v (measured via REV Driver Hub)
+<li>
+<p>All tests done when battery is between 12-13v (measured via REV Driver Hub)</p>
 <ul>
 <li>All batteries are less than a year old</li>
 </ul>
 </li>
 </ul>
 <blockquote>
-<p><strong>Only hardware changes between tests are changing the odometry module!</strong></p>
+<p><strong>Only hardware changes between tests are changing the odometry module or IMU!</strong></p>
 </blockquote>
 <ul>
 <li>CAD models for all odometry set-ups can be found <a href="https://cad.onshape.com/documents/00fb2b8fdbd2d0c2cdcbc217/w/79d9fab6dc2812b605647b2f/e/d73efa616f99a98bcc69a6b4">here</a></li>
@@ -233,14 +253,13 @@
 <h3 id="software"><a class="header" href="#software">Software:</a></h3>
 <ul>
 <li>
-<p>Robot Library: RoadRunner V1.0 (Quickstart, 3 Dead Wheels)</p>
+<p>Robot Library: <a href="https://rr.brott.dev/docs/">RoadRunner V1.0 Quickstart</a> (for both 3 Dead Wheels &amp; 2 Dead Wheels)</p>
 <ul>
 <li>
 <p>Tuning steps: (each step should be ran 3 times, and the three values should be averaged to get the final constant)</p>
 </li>
 <li>
-<p><code>ForwardPushTest</code> &amp; <code>LateralPushTest</code>:
-\( \frac{\frac{96}{24.5}}{384.5} = 0.010190812 \)</p>
+<p><code>ForwardPushTest</code> &amp; <code>LateralPushTest</code>: Theoretical <code>inPerTick</code> \( =\frac{\frac{96}{24.5}}{384.5} = 0.010190812 \)</p>
 </li>
 <li>
 <p><code>ForwardRampLogger</code>: 5 Tiles (120 inches)</p>
