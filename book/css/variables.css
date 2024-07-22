@@ -73,31 +73,31 @@
     --icons: #006B84;
     --icons-hover: #2AA198;
 
-    --links: #7A622C;
+    --links: #126a75;
 
-    --inline-code-color: #0d9d88;
+    --inline-code-color: #0d919d;
 
-    --theme-popup-bg: #F8DF95;;
-    --theme-popup-border: #705E13;
-    --theme-hover: #F1CC56;
+    --theme-popup-bg: #002B36;
+    --theme-popup-border: #2AA198;
+    --theme-hover: #094856;
 
-    --quote-bg: #F1CC56;
-    --quote-border: #B78D25;
+    --quote-bg: #074644;
+    --quote-border: #126a75;
 
-    --warning-border: #ff8e00;
+    --warning-border: #008cff;
 
-    --table-border-color: #B78D25;
-    --table-header-bg: #443200;
-    --table-alternate-bg: #B78D25;
+    --table-border-color: #002B36;
+    --table-header-bg: #2AA198;
+    --table-alternate-bg: #006B84;
 
-    --searchbar-border-color: #B78D25;
-    --searchbar-bg: #FFE497;
-    --searchbar-fg: #443200;
-    --searchbar-shadow-color: #443200;
-    --searchresults-header-fg: #443200;
-    --searchresults-border-color: #443200;
-    --searchresults-li-bg: #443200;
-    --search-mark-bg: #B78D25;
+    --searchbar-border-color: #358193;
+    --searchbar-bg: #00212B;
+    --searchbar-fg: #126a75;
+    --searchbar-shadow-color: #1c6175;
+    --searchresults-header-fg: #108bad;
+    --searchresults-border-color: #0d919d;
+    --searchresults-li-bg: #1a99d4;
+    --search-mark-bg: #1a7f98;
 
     --color-scheme: dark;
 }
