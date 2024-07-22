@@ -363,10 +363,9 @@ function playground_text(playground, hidden = true) {
             //ace_theme = "ace/theme/tomorrow_night";
             ace_theme = "ace/theme/solvers-light";
         }
-
         else {
             stylesheets.ayuHighlight.disabled = true;
-            stylesheets.tomorrowNight.disabled = false;
+            stylesheets.tomorrowNight.disabled = true;
             stylesheets.highlight.disabled = true;
             stylesheets.solversLightHighlight.disabled = true;
             stylesheets.solversDarkHighlight.disabled = false;

@@ -1,5 +1,5 @@
 /*
- * Solvers Light Theme
+ * Solvers Dark Theme
  */
 
 /* Comment */
@@ -49,14 +49,14 @@
 /* Purple */
 .hljs-keyword,
 .hljs-selector-tag {
-    color: #9d00ec;
+    color: #BAAD0C;
 }
 
 .hljs {
     display: block;
     overflow-x: auto;
     background: #004052;
-    color: #1eb5fc;
+    color: #1ed3ba;
 }
 
 .hljs-emphasis {
