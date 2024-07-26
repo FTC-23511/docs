@@ -120,7 +120,7 @@
 ---
 
 ### Analysis
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Each test program above ([Straight Test](./StraightTest.md), [Spline Test](./SplineTest.md), and [Combined Test](./CombinedTest.md)) returns two results at the end of the program - the pose of the robot after each cycle, and a graph that has data plotted after each trajectory is complete. 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Each test program above ([Straight Test](./StraightTest.md), [Spline Test](./SplineTest.md), and [Combined Test](./CombinedTest.md)) returns two results at the end of the program - the pose of the robot after each cycle, and a graph that has data plotted after each trajectory is complete. During the program, telemetry of the pose of the most recent trajectory completed and distance the robot has linearly traveled will be displayed - these are the two results that will be plotted in the graph.  
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The graph will be made in [FTC Dashboard](https://acmerobotics.github.io/ftc-dashboard/). The y-axis will represent the current error after each trajectory has been completed via this formula:
 
@@ -164,4 +164,20 @@
   </msqrt>
 </math>
 
-And the x-axis will represent distance travelled linearly. In other words, after each trajectory, a point is plotting representing the error of the robot based off distance traveled.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;On the other hand, the x-axis will represent distance travelled linearly. In other words, after each trajectory, a point is plotting representing the error of the robot based off distance traveled.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A perfect odometry wheel will always have a y-axis of 0, since there is no error no matter the distance traveled, but most odometry wheels with error will likely have a graph with positive correlation (slope is upwards), as the x-axis (distance traveled) will have a more and more profound effect. This occurs because positional error tends to compound.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Based off the graph and the points plotted, we can create a line of linear best fit using the formula \\( y = mx + b \\) from points plotted in Excel/Google Sheets from the data outputted from [FTC Dashboard](https://acmerobotics.github.io/ftc-dashboard/).
+
+---
+
+### Results
+
+In total, the following items will be returned for each odometry wheel tested for each individual test program ([Straight Test](./StraightTest.md), [Spline Test](./SplineTest.md), and [Combined Test](./CombinedTest.md)):
+
+1. Pose after each cycle (ideal pose is 0,0)
+2. A graph in Excel/Google Spreadsheet from the data outputted from [FTC Dashboard](https://acmerobotics.github.io/ftc-dashboard/) that shows the error after each trajectory has been completed, along with a line of best fit
+3. The slope of the line of the best fit
+
+As there are three testing programs, each odometry wheel will have 3 different result files (3 poses, 3 graphs, and 3 line of best fit slopes). These three can be compared to other vendors' odometry wheels to come to a final conclusion.
