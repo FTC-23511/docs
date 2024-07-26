@@ -27,8 +27,6 @@
         <link rel="stylesheet" href="../highlight.css">
         <link rel="stylesheet" href="../tomorrow-night.css">
         <link rel="stylesheet" href="../ayu-highlight.css">
-        <link rel="stylesheet" href="../solvers-light-highlight.css">
-        <link rel="stylesheet" href="../solvers-dark-highlight.css">
 
         <!-- Custom theme stylesheets -->
 
@@ -134,8 +132,6 @@
                             <i class="fa fa-paint-brush"></i>
                         </button>
                         <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
-                            <li role="none"><button role="menuitem" class="theme" id="solvers-light">Solvers Light</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="solvers-dark">Solvers Dark</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
@@ -285,7 +281,7 @@
 <li>
 <p><a href="./StraightTest.html">Straight Test</a>:</p>
 <ul>
-<li>Moving in every 30° direction from 0° to 330° back and forth a distance of 2 Tiles (48 inches) in a straight line</li>
+<li>Moves in every 30° direction from 0° to 330° back and forth a distance of 2 Tiles (48 inches) in a straight line</li>
 <li>At the end, the change in position for each odometry wheel is returned</li>
 <li>There is no turning</li>
 <li>This will all be executed with <code>.strafeTo(new Vector2d(x, y))</code>, not <code>.lineToX(x)</code> or <code>.lineToY(y)</code></li>
@@ -301,8 +297,8 @@
 <li>
 <p><a href="./SplineTest.html">Spline Test:</a></p>
 <ul>
-<li>A large variety of splines, turns, and turning while strafing in complex paths</li>
-<li>At the end, the change in position for each odometry wheel is returned</li>
+<li>Repeats a cycle of various splines, turns, and turning while strafing 3 times</li>
+<li>At the end of each cycle, the change in position for each odometry wheel is returned</li>
 </ul>
  <br>
      <div class="video-container-1">
@@ -313,10 +309,11 @@
  <br>
 </li>
 <li>
-<p><a href="./CombinedTest.html"> Combined Test:</a></p>
+<p><a href="./CombinedTest.html">Combined Test:</a></p>
 <ul>
 <li>A combination of <a href="./SplineTest.html">Spline Test</a> and <a href="./StraightTest.html">Straight Test</a></li>
-<li>At the end, the change in position for each odometry wheel is returned</li>
+<li>Repeats a cycle of various splines, turns, and strafes 3 times</li>
+<li>At the end of each cycle, the change in position for each odometry wheel is returned</li>
 </ul>
  <br>
      <div class="video-container-1">
@@ -351,6 +348,51 @@
         }
     }
 </style>
+<hr />
+<h3 id="analysis"><a class="header" href="#analysis">Analysis</a></h3>
+<p>        Each test program above (<a href="./StraightTest.html">Straight Test</a>, <a href="./SplineTest.html">Spline Test</a>, and <a href="./CombinedTest.html">Combined Test</a>) returns two results at the end of the program - the pose of the robot after each cycle, and a graph that has data plotted after each trajectory is complete.</p>
+<p>        The graph will be made in <a href="https://acmerobotics.github.io/ftc-dashboard/">FTC Dashboard</a>. The y-axis will represent the current error after each trajectory has been completed via this formula:</p>
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msqrt>
+    <mrow>
+      <msup>
+        <mrow>
+          <mo>(</mo>
+          <msub>
+            <mi>x</mi>
+            <mtext>localizer</mtext>
+          </msub>
+          <mo>-</mo>
+          <msub>
+            <mi>x</mi>
+            <mtext>target</mtext>
+          </msub>
+          <mo>)</mo>
+        </mrow>
+        <mn>2</mn>
+      </msup>
+      <mo>+</mo>
+      <msup>
+        <mrow>
+          <mo>(</mo>
+          <msub>
+            <mi>y</mi>
+            <mtext>localizer</mtext>
+          </msub>
+          <mo>-</mo>
+          <msub>
+            <mi>y</mi>
+            <mtext>target</mtext>
+          </msub>
+          <mo>)</mo>
+        </mrow>
+        <mn>2</mn>
+      </msup>
+    </mrow>
+  </msqrt>
+</math>
+<p>And the x-axis will represent distance travelled linearly. In other words, after each trajectory, a point is plotting representing the error of the robot based off distance traveled.</p>
+
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">

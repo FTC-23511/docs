@@ -56,7 +56,7 @@
 - Testing Specifications:
 
     1. [Straight Test](./StraightTest.md):
-        - Moving in every 30° direction from 0° to 330° back and forth a distance of 2 Tiles (48 inches) in a straight line
+        - Moves in every 30° direction from 0° to 330° back and forth a distance of 2 Tiles (48 inches) in a straight line
         - At the end, the change in position for each odometry wheel is returned
         - There is no turning
         - This will all be executed with `.strafeTo(new Vector2d(x, y))`, not `.lineToX(x)` or `.lineToY(y)`
@@ -70,8 +70,8 @@
         <br>
 
     2. [Spline Test:](./SplineTest.md)
-        - A large variety of splines, turns, and turning while strafing in complex paths
-        - At the end, the change in position for each odometry wheel is returned
+        - Repeats a cycle of various splines, turns, and turning while strafing 3 times
+        - At the end of each cycle, the change in position for each odometry wheel is returned
 
         <br>
             <div class="video-container-1">
@@ -81,9 +81,10 @@
             </div>
         <br>
 
-    3. [ Combined Test:](./CombinedTest.md)
+    3. [Combined Test:](./CombinedTest.md)
         - A combination of [Spline Test](./SplineTest.md) and [Straight Test](./StraightTest.md)
-        - At the end, the change in position for each odometry wheel is returned
+        - Repeats a cycle of various splines, turns, and strafes 3 times
+        - At the end of each cycle, the change in position for each odometry wheel is returned
 
         <br>
             <div class="video-container-1">
@@ -115,3 +116,52 @@
         }
     }
 </style>
+
+---
+
+### Analysis
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Each test program above ([Straight Test](./StraightTest.md), [Spline Test](./SplineTest.md), and [Combined Test](./CombinedTest.md)) returns two results at the end of the program - the pose of the robot after each cycle, and a graph that has data plotted after each trajectory is complete. 
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The graph will be made in [FTC Dashboard](https://acmerobotics.github.io/ftc-dashboard/). The y-axis will represent the current error after each trajectory has been completed via this formula:
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msqrt>
+    <mrow>
+      <msup>
+        <mrow>
+          <mo>(</mo>
+          <msub>
+            <mi>x</mi>
+            <mtext>localizer</mtext>
+          </msub>
+          <mo>-</mo>
+          <msub>
+            <mi>x</mi>
+            <mtext>target</mtext>
+          </msub>
+          <mo>)</mo>
+        </mrow>
+        <mn>2</mn>
+      </msup>
+      <mo>+</mo>
+      <msup>
+        <mrow>
+          <mo>(</mo>
+          <msub>
+            <mi>y</mi>
+            <mtext>localizer</mtext>
+          </msub>
+          <mo>-</mo>
+          <msub>
+            <mi>y</mi>
+            <mtext>target</mtext>
+          </msub>
+          <mo>)</mo>
+        </mrow>
+        <mn>2</mn>
+      </msup>
+    </mrow>
+  </msqrt>
+</math>
+
+And the x-axis will represent distance travelled linearly. In other words, after each trajectory, a point is plotting representing the error of the robot based off distance traveled.
