@@ -1,14 +1,15 @@
 # Odometry Testing
 
 ### Procedure:
-- For each Odometry Wheel tested, they will go through the following configurations:
+- Each Odometry Wheel tested will go through the following configurations:
   1. 2-Dead Wheels + [Internal BHI260AP IMU](https://www.revrobotics.com/rev-31-1595/)
   2. 2-Dead Wheels + [External BNO055 IMU](https://www.adafruit.com/product/2472)
   3. 3-Dead Wheels
 
-- Each configuration will go through a total of three tests (see [programming section](./OdometryTesting.md#software) below for more details)
+- Each configuration will go through a total of three test programs (see [programming section](./OdometryTesting.md#software) below for more details)
+- Each test program will be ran 5 times, and the final data are those 5 values averaged (see [results section](./OdometryTesting.md#results) for more details)
 
-- Use [RoadRunner V1.0 Quickstart](https://rr.brott.dev/docs/) to tune each configuration
+- The autonomous libUse [RoadRunner V1.0 Quickstart](https://rr.brott.dev/docs/) to tune each configuration
    - Each step in the tuning procedure will be tuned 3 times, and values will be averaged to get a final constant (e.g, `kV`, `kA`, etc.)
 
 ### Environment:
@@ -168,16 +169,20 @@
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A perfect odometry wheel will always have a y-axis of 0, since there is no error no matter the distance traveled, but most odometry wheels with error will likely have a graph with positive correlation (slope is upwards), as the x-axis (distance traveled) will have a more and more profound effect. This occurs because positional error tends to compound.
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Based off the graph and the points plotted, we can create a line of linear best fit using the formula \\( y = mx + b \\) from points plotted in Excel/Google Sheets from the data outputted from [FTC Dashboard](https://acmerobotics.github.io/ftc-dashboard/).
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Based off the graph and the points plotted, we can create a line of linear best fit using the formula \\( y = mx + b \\) from points plotted in Google Sheets from the data outputted from [FTC Dashboard](https://acmerobotics.github.io/ftc-dashboard/).
 
 ---
 
 ### Results
 
-In total, the following items will be returned for each odometry wheel tested for each individual test program ([Straight Test](./StraightTest.md), [Spline Test](./SplineTest.md), and [Combined Test](./CombinedTest.md)):
+Each of the 3 testing programs will be ran a total of 5 times for each of the 3 odometry configurations. Each run will give us 1 sample, which includes the details below:
 
 1. Pose after each cycle (ideal pose is 0,0)
-2. A graph in Excel/Google Spreadsheet from the data outputted from [FTC Dashboard](https://acmerobotics.github.io/ftc-dashboard/) that shows the error after each trajectory has been completed, along with a line of best fit
+2. A graph in Google Sheets from the data outputted from [FTC Dashboard](https://acmerobotics.github.io/ftc-dashboard/) that shows the error after each trajectory has been completed, along with a line of best fit and the raw data in a table
 3. The slope of the line of the best fit
 
-As there are three testing programs, each odometry wheel will have 3 different result files (3 poses, 3 graphs, and 3 line of best fit slopes). These three can be compared to other vendors' odometry wheels to come to a final conclusion.
+In addition, each configuration will have a final sample that is created from the averages of each of the 5 samples. 
+
+This means that for each odometry wheel, there will be a total of \\( (3 \times 3 \times 5) + 3 = 48 \\) samples.
+
+We can compare the final samples from each test program to come to a final conclusion for odometry wheels from various vendors..

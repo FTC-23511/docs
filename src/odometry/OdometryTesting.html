@@ -189,7 +189,7 @@
 <h3 id="procedure"><a class="header" href="#procedure">Procedure:</a></h3>
 <ul>
 <li>
-<p>For each Odometry Wheel tested, they will go through the following configurations:</p>
+<p>Each Odometry Wheel tested will go through the following configurations:</p>
 <ol>
 <li>2-Dead Wheels + <a href="https://www.revrobotics.com/rev-31-1595/">Internal BHI260AP IMU</a></li>
 <li>2-Dead Wheels + <a href="https://www.adafruit.com/product/2472">External BNO055 IMU</a></li>
@@ -197,10 +197,13 @@
 </ol>
 </li>
 <li>
-<p>Each configuration will go through a total of three tests (see <a href="./OdometryTesting.html#software">programming section</a> below for more details)</p>
+<p>Each configuration will go through a total of three test programs (see <a href="./OdometryTesting.html#software">programming section</a> below for more details)</p>
 </li>
 <li>
-<p>Use <a href="https://rr.brott.dev/docs/">RoadRunner V1.0 Quickstart</a> to tune each configuration</p>
+<p>Each test program will be ran 5 times, and the final data are those 5 values averaged (see <a href="./OdometryTesting.html#results">results section</a> for more details)</p>
+</li>
+<li>
+<p>The autonomous libUse <a href="https://rr.brott.dev/docs/">RoadRunner V1.0 Quickstart</a> to tune each configuration</p>
 <ul>
 <li>Each step in the tuning procedure will be tuned 3 times, and values will be averaged to get a final constant (e.g, <code>kV</code>, <code>kA</code>, etc.)</li>
 </ul>
@@ -397,16 +400,18 @@
 </math>
 <p>        On the other hand, the x-axis will represent distance travelled linearly. In other words, after each trajectory, a point is plotting representing the error of the robot based off distance traveled.</p>
 <p>        A perfect odometry wheel will always have a y-axis of 0, since there is no error no matter the distance traveled, but most odometry wheels with error will likely have a graph with positive correlation (slope is upwards), as the x-axis (distance traveled) will have a more and more profound effect. This occurs because positional error tends to compound.</p>
-<p>        Based off the graph and the points plotted, we can create a line of linear best fit using the formula \( y = mx + b \) from points plotted in Excel/Google Sheets from the data outputted from <a href="https://acmerobotics.github.io/ftc-dashboard/">FTC Dashboard</a>.</p>
+<p>        Based off the graph and the points plotted, we can create a line of linear best fit using the formula \( y = mx + b \) from points plotted in Google Sheets from the data outputted from <a href="https://acmerobotics.github.io/ftc-dashboard/">FTC Dashboard</a>.</p>
 <hr />
 <h3 id="results"><a class="header" href="#results">Results</a></h3>
-<p>In total, the following items will be returned for each odometry wheel tested for each individual test program (<a href="./StraightTest.html">Straight Test</a>, <a href="./SplineTest.html">Spline Test</a>, and <a href="./CombinedTest.html">Combined Test</a>):</p>
+<p>Each of the 3 testing programs will be ran a total of 5 times for each of the 3 odometry configurations. Each run will give us 1 sample, which includes the details below:</p>
 <ol>
 <li>Pose after each cycle (ideal pose is 0,0)</li>
-<li>A graph in Excel/Google Spreadsheet from the data outputted from <a href="https://acmerobotics.github.io/ftc-dashboard/">FTC Dashboard</a> that shows the error after each trajectory has been completed, along with a line of best fit</li>
+<li>A graph in Google Sheets from the data outputted from <a href="https://acmerobotics.github.io/ftc-dashboard/">FTC Dashboard</a> that shows the error after each trajectory has been completed, along with a line of best fit and the raw data in a table</li>
 <li>The slope of the line of the best fit</li>
 </ol>
-<p>As there are three testing programs, each odometry wheel will have 3 different result files (3 poses, 3 graphs, and 3 line of best fit slopes). These three can be compared to other vendors' odometry wheels to come to a final conclusion.</p>
+<p>In addition, each configuration will have a final sample that is created from the averages of each of the 5 samples.</p>
+<p>This means that for each odometry wheel, there will be a total of \( (3 \times 3 \times 5) + 3 = 48 \) samples.</p>
+<p>We can compare the final samples from each test program to come to a final conclusion for odometry wheels from various vendors..</p>
 
                     </main>
 
