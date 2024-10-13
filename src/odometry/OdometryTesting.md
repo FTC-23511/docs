@@ -65,7 +65,7 @@
         <br>
             <div class="video-container-1">
                 <iframe width="505" height="650"
-                    src="https://www.youtube.com/embed/0vLSH07H9QM?rel=0&modestbranding=1" title="waitSeconds()" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                    src="https://www.youtube.com/embed/_hGEzHGw4xU?rel=0&modestbranding=1" title="waitSeconds()" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
                 </iframe>
             </div>
         <br>
@@ -77,7 +77,7 @@
         <br>
             <div class="video-container-1">
                 <iframe width="505" height="650"
-                    src="https://www.youtube.com/embed/l5nCy-ByGY4?rel=0&modestbranding=1" title="waitSeconds()" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                    src="https://www.youtube.com/embed/RgJpuW6SP0A?rel=0&modestbranding=1" title="waitSeconds()" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
                 </iframe>
             </div>
         <br>
@@ -90,7 +90,7 @@
         <br>
             <div class="video-container-1">
                 <iframe width="505" height="650"
-                    src="https://www.youtube.com/embed/D9ous77Ukqo?rel=0&modestbranding=1" title="waitSeconds()" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                    src="https://www.youtube.com/embed/RikXgwfZ1Mk?rel=0&modestbranding=1" title="waitSeconds()" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
                 </iframe>
             </div>
         <br>
